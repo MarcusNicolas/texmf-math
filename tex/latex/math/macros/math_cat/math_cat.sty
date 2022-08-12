@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{math_cat}
+
+\RequirePackage{math_ens}
+
+\ProcessOptions
+
+
+\newcommand\cat[1]{\mathsf{#1}}
+\newcommand\Ens{\cat{Ens}}
+\newcommand\Grp{\cat{Grp}}
+\newcommand\Ab{\cat{Ab}}
+\newcommand\Top{\cat{Top}}
+\newcommand\Fib{\cat{Fib}}
+\newcommand\Prin[1]{{#1}\text{-}\cat{Prin}}
+
+\newcommand\oubli{\mathfrak{U}}
+\newcommand\foncteur[1]{\mathscr{#1}}
+
+\newcommand\op{\mathsf{op}}
+\newcommand\id{\mathsf{id}}
+
+\newcommand\app[2]{{#1} \colon {#2}}
+
+\newcommand\iso{\simeq}
+\newcommand\fleche{\rightarrow}
+\newcommand\lfleche{\longrightarrow}
+
+
+\newcommand\quotient[2]{{#1} / {#2}}
+
+\DeclareMathOperator{\Cone}{Cone} % à déplacer
+
+
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Coker}{Coker}
+
+\endinput

@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{math_base}
+
+
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{stmaryrd}
+
+% Pour éviter un avertissement
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+
+\RequirePackage{mathtools}
+\RequirePackage{bm}
+
+\ProcessOptions
+
+
+
+
+
+% varepsilon / varphi
+
+\renewcommand\epsilon{\varepsilon}
+\renewcommand\phi{\varphi}
+
+
+% Macros
+
+\DeclarePairedDelimiter\p{(}{)}
+\DeclarePairedDelimiter\cro{[}{]}
+%\DeclarePairedDelimiterX\crochets[1]{[}{]}{\, #1 \,}
+
+
+\makeatletter
+
+\let\oldp\p
+\def\p{\@ifstar{\oldp}{\oldp*}}
+
+\let\oldcro\cro
+\def\cro{\@ifstar{\oldcro}{\oldcro*}}
+
+%\let\oldcrochets\crochets
+%\def\crochets{\@ifstar{\oldcrochets}{\oldcrochets*}}
+
+
+\makeatother
+
+
+
+%%
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand\complementaire{\complement}
+
+\newcommand\pourtout[1]{\forall {#1}, \;}
+\newcommand\existe[1]{\exists {#1}, \;}
+\newcommand\existeunique[1]{\exists ! {#1}, \;}
+
+
+\newcommand\etoile{*}
+\newcommand\plus{{\raisebox{0.6pt}{\mbox{\tiny$+$}}}}
+\newcommand\moins{{\raisebox{0.6pt}{\mbox{\tiny$-$}}}}
+
+
+\endinput

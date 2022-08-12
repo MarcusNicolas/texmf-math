@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}[2021/06/01]
 \ProvidesClass{cours}[2021/12/12]
 
-\LoadClass[french,9pt]{memoir}
+\LoadClass[french,10pt]{memoir}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -11,13 +11,22 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{ifthen}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{cleveref}
 
 %%%%
 
+% Marges
+
+\setlrmarginsandblock{3.5cm}{3cm}{*}
+\setulmarginsandblock{4cm}{*}{1}
+\checkandfixthelayout 
+
 
 % Numérotation des sections
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\bfseries}
 
@@ -43,6 +52,10 @@
 \end{titlingpage}}
 
 
+% Macros d'ordre général
+
+\newcommand{\nouvterme}[1]{{\color{blue} #1}}
+
 
 % Environnements mathématiques
 
@@ -55,22 +68,22 @@
 \newenvironment{justif}
 {\begin{proof}[Justification]}{\end{proof}}
 
-\newenvironment{dem}
+\newenvironment{dém}
 {\begin{proof}[Démonstration]}{\end{proof}}
 
 
-
 \theoremstyle{plain}
-\newtheorem{thm}{Théorème}[section]
+\newtheorem{thm}{Théorème}[chapter]
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lem}[thm]{Lemme}
+\newtheorem{cor}[thm]{Corollaire}
 \newtheorem{ax}[thm]{Axiome}
 
 \newtheorem{metathm}[thm]{Métathéorème}
 
 
 \theoremstyle{remark}
-\newtheorem*{remarque}{Remarque}
+\newtheorem*{rmq}{Remarque}
 
 \theoremstyle{definition}
 \newtheorem{déf}[thm]{Définition}
@@ -83,6 +96,8 @@
 \Crefname{prop}{Proposition}{Propositions}
 \crefname{lem}{lemme}{lemmes}
 \Crefname{lem}{Lemme}{Lemmes}
+\crefname{cor}{corollaire}{corollaires}
+\Crefname{cor}{Corollaire}{Corollaires}
 \crefname{ax}{axiome}{axiomes}
 \Crefname{ax}{Axiome}{Axiomes}
 \crefname{déf}{définition}{définitions}

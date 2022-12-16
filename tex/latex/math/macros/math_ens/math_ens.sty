@@ -9,6 +9,7 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\classe{\{}{\}}
 \DeclarePairedDelimiterX\comprehension[2]{\{}{\}}{\; #1 \;\delimsize\vert\; #2 \;}
+\DeclarePairedDelimiterX\grpRel[2]{\langle}{\rangle}{\; #1 \;\delimsize\vert\; #2 \;}
 
 
 \makeatletter
@@ -21,6 +22,9 @@
 
 \let\oldcomprehension\comprehension
 \def\comprehension{\@ifstar{\oldcomprehension}{\oldcomprehension*}}
+
+\let\oldgrpRel\grpRel
+\def\grpRel{\@ifstar{\oldgrpRel}{\oldgrpRel*}}
 
 \makeatother
 

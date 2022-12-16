@@ -11,7 +11,8 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{ifthen}
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
+\RequirePackage{tikz-cd}
 \RequirePackage{xcolor}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{cleveref}
@@ -19,6 +20,8 @@
 %%%%
 
 % Marges
+
+\setlength{\headheight}{15pt}
 
 \setlrmarginsandblock{3.5cm}{3cm}{*}
 \setulmarginsandblock{4cm}{*}{1}
@@ -29,6 +32,7 @@
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\bfseries}
+
 
 
 \chapterstyle{thatcher}
@@ -61,7 +65,7 @@
 
 \newenvironment{discussion}[1][]
 {%
-   \noindent\stepcounter{thm}\textbf{\thethm.}
+   \noindent\refstepcounter{thm}\textbf{\thethm.}
    \ifthenelse{\equal{#1}{}}{}{\textit{#1 ---}}
 }{\par\addvspace{\medskipamount}}
 
@@ -76,6 +80,7 @@
 \newtheorem{thm}{Théorème}[chapter]
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lem}[thm]{Lemme}
+\newtheorem{fait}[thm]{Fait}
 \newtheorem{cor}[thm]{Corollaire}
 \newtheorem{ax}[thm]{Axiome}
 
@@ -96,6 +101,8 @@
 \Crefname{prop}{Proposition}{Propositions}
 \crefname{lem}{lemme}{lemmes}
 \Crefname{lem}{Lemme}{Lemmes}
+\crefname{fait}{fait}{faits}
+\Crefname{fait}{Fait}{Faits}
 \crefname{cor}{corollaire}{corollaires}
 \Crefname{cor}{Corollaire}{Corollaires}
 \crefname{ax}{axiome}{axiomes}

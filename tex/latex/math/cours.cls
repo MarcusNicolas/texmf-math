@@ -88,7 +88,7 @@
 
 
 \theoremstyle{remark}
-\newtheorem*{rmq}{Remarque}
+\newtheorem{rmq}[thm]{Remarque}
 
 \theoremstyle{definition}
 \newtheorem{déf}[thm]{Définition}
@@ -107,6 +107,8 @@
 \Crefname{cor}{Corollaire}{Corollaires}
 \crefname{ax}{axiome}{axiomes}
 \Crefname{ax}{Axiome}{Axiomes}
+\crefname{rmq}{remarque}{remarques}
+\Crefname{rmq}{Remarque}{Remarques}
 \crefname{déf}{définition}{définitions}
 \Crefname{déf}{Définition}{Définitions}
 \crefname{ex}{exemple}{exemples}

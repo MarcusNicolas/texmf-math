@@ -14,6 +14,7 @@
 \RequirePackage[inline]{enumitem}
 \RequirePackage{tikz-cd}
 \RequirePackage{xcolor}
+\RequirePackage[most]{tcolorbox}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{cleveref}
 
@@ -69,11 +70,55 @@
    \ifthenelse{\equal{#1}{}}{}{\textit{#1 ---}}
 }{\par\addvspace{\medskipamount}}
 
-\newenvironment{justif}
-{\begin{proof}[Justification]}{\end{proof}}
 
-\newenvironment{dém}
-{\begin{proof}[Démonstration]}{\end{proof}}
+%\xpatchcmd{\proof}{\itshape}{\itshape}{}{}
+
+%\xpretocmd{\proof}{\setlength{\parindent}{15pt}}{}{}
+
+\newtcolorbox{démtcb}[2][]{
+  blanker,
+  enhanced,
+  title={#1},
+  fonttitle=\itshape,
+  coltitle=black,
+  colframe=black,
+  colback=#2!3!white,
+  attach boxed title to top left=
+    {xshift=-2mm},
+  boxed title style={
+    enhanced,
+    arc=0pt,
+    outer arc=0pt,
+    boxsep=0pt,
+    left=0pt,
+    right=5pt,
+    top=3pt,
+    bottom=5pt,
+    boxrule=0pt,
+    frame hidden,
+    colback=white,
+    borderline south={.5pt}{0pt}{black}
+  },
+	before skip=\topsep,
+	after skip=\topsep,
+  boxrule=0pt,
+  borderline west={.5pt}{0pt}{black},
+  boxsep=7pt,
+  left=9pt,
+  right=8pt,
+  left skip=2mm,
+  boxrule=0pt,
+  frame hidden,
+  before upper={\setlength{\parindent}{10pt}},
+  fontupper=\small,
+  after skip balanced=\baselineskip,
+	breakable
+}
+
+
+\newenvironment{dém}{\begin{démtcb}[Démonstration]{black}}{\end{démtcb}}
+\newenvironment{justif}{\begin{démtcb}[Justification]{blue}}{\end{démtcb}}
+
 
 
 \theoremstyle{plain}

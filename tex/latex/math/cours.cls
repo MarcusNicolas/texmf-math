@@ -16,7 +16,7 @@
 \RequirePackage{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage{cleveref}
+\RequirePackage[french]{cleveref}
 
 %%%%
 
@@ -55,6 +55,8 @@
 \rule{0.5\textwidth}{0.4pt}\par
 \vspace{\drop}
 \end{titlingpage}}
+
+
 
 
 % Macros d'ordre général
@@ -116,8 +118,21 @@
 }
 
 
-\newenvironment{dém}{\begin{démtcb}[Démonstration]{black}}{\end{démtcb}}
-\newenvironment{justif}{\begin{démtcb}[Justification]{blue}}{\end{démtcb}}
+\newenvironment{dém}{%
+  \begin{démtcb}[Démonstration]{black}%
+  \tikzcdset{background color=black!3!white}%
+}{%
+  \tikzcdset{background color=white}%
+  \end{démtcb}%
+}
+
+\newenvironment{justif}{%
+  \begin{démtcb}[Justification]{blue}%
+  \tikzcdset{background color=blue!3!white}%
+}{%
+  \tikzcdset{background color=white}%
+  \end{démtcb}%
+}
 
 
 

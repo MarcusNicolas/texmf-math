@@ -28,6 +28,8 @@
 
 \DeclarePairedDelimiter\p{(}{)}
 \DeclarePairedDelimiter\cro{[}{]}
+\DeclarePairedDelimiter\partInf{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\partSup{\lceil}{\rceil}
 
 
 \makeatletter
@@ -37,6 +39,12 @@
 
 \let\oldcro\cro
 \def\cro{\@ifstar{\oldcro}{\oldcro*}}
+
+\let\oldpartInf\partInf
+\def\partInf{\@ifstar{\oldpartInf}{\oldpartInf*}}
+
+\let\oldpartSup\partSup
+\def\partSup{\@ifstar{\oldpartSup}{\oldpartSup*}}
 
 
 

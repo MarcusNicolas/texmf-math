@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}[2021/06/01]
-\ProvidesClass{cours}[2021/12/12]
+\ProvidesClass{idr}[2021/12/12]
 
-\LoadClass[french,10pt]{memoir}
+\LoadClass[french,10pt,a4paper]{article}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -23,20 +23,6 @@
 % Marges
 
 \setlength{\headheight}{15pt}
-
-\setlrmarginsandblock{3.5cm}{3cm}{*}
-\setulmarginsandblock{4cm}{*}{1}
-\checkandfixthelayout
-
-
-% Numérotation des sections
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\titleformat*{\section}{\large\bfseries}
-\titleformat*{\subsection}{\bfseries}
-
-
-
-\chapterstyle{thatcher}
 
 
 % Titre
@@ -137,7 +123,7 @@
 
 
 \theoremstyle{plain}
-\newtheorem{thm}{Théorème}[chapter]
+\newtheorem{thm}{Théorème}[section]
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lem}[thm]{Lemme}
 \newtheorem{fait}[thm]{Fait}

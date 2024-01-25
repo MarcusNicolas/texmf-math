@@ -1,12 +1,11 @@
-\NeedsTeXFormat{LaTeX2e}[2021/06/01]
-\ProvidesClass{cours}[2021/12/12]
+\NeedsTeXFormat{LaTeX2e}[2024/01/25]
+\ProvidesClass{article_en}[2024/01/25]
 
-\LoadClass[french,10pt]{memoir}
+\LoadClass[12pt]{memoir}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[french]{babel}
-\RequirePackage{titlesec}
+\RequirePackage[backend=biber, style=alphabetic]{biblatex}
 
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
@@ -20,46 +19,62 @@
 
 %%%%
 
+\pagestyle{plain}
 
-% TODO absolument: mettre les numéros de page en bas (et pas systématiquement
-% lorsque l'on commence un nouveau chapitre)
+
+% Biblio
+
+\nobibintoc
+
+\defbibheading{bibliography}[\bibname]{%
+\section*{#1}%
+\markboth{#1}{#1}}
+
+\AtBeginDocument{%
+  \renewcommand{\bibname}{References}
+}
+
+
 
 
 % Marges
 
 \setlength{\headheight}{15pt}
 
-\setlrmarginsandblock{3.5cm}{3cm}{*}
+\setlrmarginsandblock{3.5cm}{3.5cm}{*}
 \setulmarginsandblock{4cm}{*}{1}
 \checkandfixthelayout
 
 
 % Numérotation des sections
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\titleformat*{\section}{\large\bfseries}
-\titleformat*{\subsection}{\bfseries}
+\renewcommand{\thesection}{\arabic{section}.}
+\setsecheadstyle{\center\bfseries\scshape}
+
+
+% Table des matières
+
+\renewcommand{\printtoctitle}[1]{\center\bfseries\scshape #1}
+\setcounter{secnumdepth}{1}
 
 
 
-\chapterstyle{thatcher}
+% Résumé / abstract
 
+\renewcommand{\abstractname}{}
 
 % Titre
 
 \newlength{\drop}
 
-\newcommand*{\couverture}{\begin{titlingpage}
-\fontencoding{T1}\fontfamily{pnc}\selectfont
+\newcommand*{\couverture}{%
+{\fontencoding{T1}\fontfamily{pnc}\selectfont
 \drop=0.1\textheight
 \vspace*{\drop}
 \centering
 {\HUGE \textbf{\textsc{\thetitle}}}\\[\baselineskip]
-{\footnotesize \textsc{par}}\\[0.3\baselineskip]
 {\textsc{\theauthor}}\\
 \vspace{0.25\drop}
-\rule{0.5\textwidth}{0.4pt}\par
-\vspace{\drop}
-\end{titlingpage}}
+\rule{0.5\textwidth}{0.4pt}\par}}
 
 
 
@@ -78,9 +93,6 @@
 }{\par\addvspace{\medskipamount}}
 
 
-%\xpatchcmd{\proof}{\itshape}{\itshape}{}{}
-
-%\xpretocmd{\proof}{\setlength{\parindent}{15pt}}{}{}
 
 \newtcolorbox{démtcb}[2][]{
   blanker,
@@ -124,7 +136,7 @@
 
 
 \newenvironment{dém}{%
-  \begin{démtcb}[Démonstration]{black}%
+  \begin{démtcb}[Proof]{black}%
   \tikzcdset{background color=black!3!white}%
 }{%
   \tikzcdset{background color=white}%
@@ -142,43 +154,38 @@
 
 
 \theoremstyle{plain}
-\newtheorem{thm}{Théorème}[chapter]
+\newtheorem{thm}{Theorem}[section]
 \newtheorem{prop}[thm]{Proposition}
-\newtheorem{lem}[thm]{Lemme}
-\newtheorem{fait}[thm]{Fait}
-\newtheorem{cor}[thm]{Corollaire}
-\newtheorem{ax}[thm]{Axiome}
-
-\newtheorem{metathm}[thm]{Métathéorème}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{fait}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{ax}[thm]{Axiom}
 
 
 \theoremstyle{remark}
-\newtheorem{rmq}[thm]{Remarque}
+\newtheorem{rmq}[thm]{Remark}
 
 \theoremstyle{definition}
-\newtheorem{déf}[thm]{Définition}
-\newtheorem{ex}[thm]{Exemple}
+\newtheorem{déf}[thm]{Definition}
+\newtheorem{ex}[thm]{Example}
 
 
-\crefname{thm}{théorème}{théorèmes}
-\Crefname{thm}{Théorème}{Théorèmes}
+\crefname{thm}{theorem}{theorems}
+\Crefname{thm}{Theorem}{Theorems}
 \crefname{prop}{proposition}{propositions}
 \Crefname{prop}{Proposition}{Propositions}
-\crefname{lem}{lemme}{lemmes}
-\Crefname{lem}{Lemme}{Lemmes}
-\crefname{fait}{fait}{faits}
-\Crefname{fait}{Fait}{Faits}
-\crefname{cor}{corollaire}{corollaires}
-\Crefname{cor}{Corollaire}{Corollaires}
-\crefname{ax}{axiome}{axiomes}
-\Crefname{ax}{Axiome}{Axiomes}
-\crefname{rmq}{remarque}{remarques}
-\Crefname{rmq}{Remarque}{Remarques}
-\crefname{déf}{définition}{définitions}
-\Crefname{déf}{Définition}{Définitions}
-\crefname{ex}{exemple}{exemples}
-\Crefname{ex}{Exemple}{Exemples}
-
-\crefname{metathm}{métathéorème}{métathéorèmes}
-\Crefname{metathm}{Métathéorème}{Métathéorèmes}
+\crefname{lem}{lemma}{lemmas}
+\Crefname{lem}{Lemma}{Lemmas}
+\crefname{fait}{fact}{facts}
+\Crefname{fait}{Fact}{Facts}
+\crefname{cor}{corollary}{corollaries}
+\Crefname{cor}{Corollary}{Corollaries}
+\crefname{ax}{axiom}{axioms}
+\Crefname{ax}{Axiom}{Axioms}
+\crefname{rmq}{remark}{remarks}
+\Crefname{rmq}{Remark}{Remarks}
+\crefname{déf}{definition}{definitions}
+\Crefname{déf}{Definition}{Definitions}
+\crefname{ex}{example}{examples}
+\Crefname{ex}{Example}{Examples}
 

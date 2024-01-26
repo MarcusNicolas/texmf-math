@@ -62,6 +62,8 @@
 \DeclareMathOperator{\Cocyl}{Cocyl}
 
 
+\DeclareMathOperator\eval{ev}
+
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\Mor}{Mor}
 \DeclareMathOperator{\Fon}{Fon}
@@ -74,5 +76,26 @@
 \DeclareMathOperator{\Ima}{Im}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Coker}{Coker}
+
+
+
+% Les symboles aux coins des carrés pullback et pushout
+
+\newsavebox{\pullback}
+\newsavebox{\pushout}
+
+\sbox\pullback{%
+  \begin{tikzpicture}%
+  \draw (0,0) -- (1ex,0ex);%
+  \draw (1ex,0ex) -- (1ex,1ex);%
+  \end{tikzpicture}%
+}
+
+\sbox\pushout{%
+  \begin{tikzpicture}%
+  \draw (0,0) -- (0ex,1ex);%
+  \draw (0ex,1ex) -- (1ex,1ex);%
+  \end{tikzpicture}%
+}
 
 \endinput

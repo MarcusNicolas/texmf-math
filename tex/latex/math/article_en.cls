@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}[2024/01/25]
 \ProvidesClass{article_en}[2024/01/25]
 
-\LoadClass[12pt]{memoir}
+\LoadClass[12pt, article]{memoir}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -24,11 +24,7 @@
 
 % Biblio
 
-\nobibintoc
-
-\defbibheading{bibliography}[\bibname]{%
-\section*{#1}%
-\markboth{#1}{#1}}
+\defbibheading{bibliography}[\bibname]{\section*{#1}}
 
 \AtBeginDocument{%
   \renewcommand{\bibname}{References}
@@ -47,14 +43,19 @@
 
 
 % Numérotation des sections
-\renewcommand{\thesection}{\arabic{section}.}
-\setsecheadstyle{\center\bfseries\scshape}
+
+\renewcommand{\thesection}{\arabic{section}}
+\setsecheadstyle{\center\large\bfseries\scshape}
+
+\setsubsecheadstyle{\bfseries\scshape}
+
+\setcounter{secnumdepth}{2}
 
 
 % Table des matières
 
 \renewcommand{\printtoctitle}[1]{\center\bfseries\scshape #1}
-\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{2}
 
 
 

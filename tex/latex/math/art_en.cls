@@ -7,6 +7,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
+\RequirePackage{mathtools}
 \RequirePackage{amssymb, amsfonts, amsmath, amsrefs}
 \RequirePackage{soul}
 \RequirePackage{appendix}
@@ -28,7 +29,7 @@
 
 
 \theoremstyle{remark}
-\newtheorem{rmq}[thm]{Remark}
+\newtheorem{rmk}[thm]{Remark}
 
 \theoremstyle{definition}
 \newtheorem{dfn}[thm]{Definition}
@@ -63,7 +64,9 @@
 
 %%%% General macros
 
-\newcommand{\nterm}[1]{{\emph{blue}}}
+\newcommand{\nterm}[1]{{\emph{#1}}}
+
+\newcommand{\defeq}{\vcentcolon=}
 
 
 %%%% Layout

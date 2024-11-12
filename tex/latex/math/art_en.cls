@@ -19,6 +19,12 @@
 \RequirePackage{cleveref}
 
 
+%%% varphi, varepsilon
+
+\renewcommand\phi{\varphi}
+\renewcommand\epsilon{\varepsilon}
+
+
 %%%% Thm formatting
 
 \theoremstyle{plain}
@@ -66,7 +72,10 @@
 
 \newcommand{\nterm}[1]{{\emph{#1}}}
 
+\newcommand{\iso}{\simeq}
+
 \newcommand{\defeq}{\vcentcolon=}
+\newcommand{\defiso}{\vcentcolon\iso}
 
 
 %%%% Layout

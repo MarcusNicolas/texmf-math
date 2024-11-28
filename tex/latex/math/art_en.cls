@@ -7,6 +7,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
+\RequirePackage{enumitem}
 \RequirePackage{mathtools}
 \RequirePackage{amssymb, amsfonts, amsmath, amsrefs}
 \RequirePackage{soul}
@@ -17,6 +18,9 @@
 
 \RequirePackage[colorlinks=true, linktocpage=true, citecolor=blue, linkcolor=blue]{hyperref}
 \RequirePackage{cleveref}
+
+
+\setcounter{tocdepth}{1}
 
 
 %%% varphi, varepsilon
@@ -32,6 +36,9 @@
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{cor}[thm]{Corollary}
+
+
+\newtheorem*{thm*}{Theorem}
 
 
 \theoremstyle{remark}

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[2024/01/25]
-\ProvidesClass{art_en}[2024/01/25]
+\ProvidesClass{art-en}[2024/01/25]
 
 
 \LoadClass{amsart}

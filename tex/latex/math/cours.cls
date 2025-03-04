@@ -8,15 +8,23 @@
 \RequirePackage[french]{babel}
 \RequirePackage{titlesec}
 
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
 \RequirePackage{ifthen}
 \RequirePackage[inline]{enumitem}
+\RequirePackage{mathtools}
+\RequirePackage{stmaryrd}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb, amsfonts, amsmath}
+\RequirePackage{soul}
+\RequirePackage{appendix}
+
+
 \RequirePackage{tikz-cd}
 \RequirePackage{xcolor}
 \RequirePackage[most]{tcolorbox}
-\RequirePackage[hidelinks]{hyperref}
-\RequirePackage[french]{cleveref}
+
+
+\RequirePackage[colorlinks=true, linktocpage=true, citecolor=violet, linkcolor=violet]{hyperref}
+\RequirePackage{cleveref}
 
 %%%%
 
@@ -66,7 +74,12 @@
 
 % Macros d'ordre général
 
-\newcommand{\nouvterme}[1]{{\color{blue} #1}}
+\newcommand{\nterm}[1]{{\emph{#1}}}
+
+\newcommand{\iso}{\simeq}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\defiso}{\vcentcolon\iso}
 
 
 % Environnements mathématiques

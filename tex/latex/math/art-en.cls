@@ -17,7 +17,8 @@
 \RequirePackage{tikz}
 \RequirePackage{tikz-cd}
 
-\RequirePackage[colorlinks=true, linktocpage=true, citecolor=blue, linkcolor=blue]{hyperref}
+\RequirePackage[colorlinks=true, linktocpage=true, citecolor=blue,
+linkcolor=blue, urlcolor=cyan]{hyperref}
 \RequirePackage{cleveref}
 
 

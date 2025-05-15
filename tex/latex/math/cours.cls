@@ -74,7 +74,7 @@
 
 % Macros d'ordre général
 
-\newcommand{\nterm}[1]{{\emph{#1}}}
+\newcommand{\nterm}[1]{{\textcolor{violet}{#1}}}
 
 \newcommand{\iso}{\simeq}
 
@@ -170,6 +170,7 @@
 
 \theoremstyle{definition}
 \newtheorem{déf}[thm]{Définition}
+\newtheorem{cstr}[thm]{Construction}
 \newtheorem{ex}[thm]{Exemple}
 
 
@@ -189,6 +190,8 @@
 \Crefname{rmq}{Remarque}{Remarques}
 \crefname{déf}{définition}{définitions}
 \Crefname{déf}{Définition}{Définitions}
+\crefname{cstr}{construction}{constructions}
+\Crefname{cstr}{Construction}{Constructions}
 \crefname{ex}{exemple}{exemples}
 \Crefname{ex}{Exemple}{Exemples}
 

@@ -78,18 +78,6 @@ linkcolor=blue, urlcolor=cyan]{hyperref}
 }{\par\addvspace{\medskipamount}}
 
 
-
-
-%%%% General macros
-
-\newcommand{\nterm}[1]{{\emph{#1}}}
-
-\newcommand{\iso}{\simeq}
-
-\newcommand{\defeq}{\vcentcolon=}
-\newcommand{\defiso}{\vcentcolon\iso}
-
-
 %%%% Layout
 
 \geometry{letterpaper}

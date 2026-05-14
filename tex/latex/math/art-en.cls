@@ -83,3 +83,47 @@ linkcolor=blue, urlcolor=cyan]{hyperref}
 %%%% Layout
 
 \geometry{letterpaper}
+
+
+%%% Part
+
+\makeatletter
+
+\@ifundefined{c@part}{\newcounter{part}}{}
+\renewcommand{\thepart}{\Roman{part}}
+\providecommand{\partname}{Part}
+
+\renewcommand{\tocpart}[3]{%
+  \indentlabel{\@ifnotempty{#2}{\ignorespaces#1 #2.\quad}}#3%
+}
+
+\RenewDocumentCommand{\part}{s o m}{%
+  \clearpage
+  \thispagestyle{empty}%
+  \IfBooleanTF{#1}
+  {%
+    \phantomsection
+    \begin{center}
+      \vspace*{\fill}
+      {\Huge\bfseries #3\par}
+      \vspace*{\fill}
+    \end{center}
+    \clearpage
+  }
+  {%
+    \refstepcounter{part}%
+    \phantomsection
+    \IfNoValueTF{#2}
+      {\addcontentsline{toc}{part}{\protect\tocpart{\partname}{\thepart}{#3}}}
+      {\addcontentsline{toc}{part}{\protect\tocpart{\partname}{\thepart}{#2}}}%
+    \begin{center}
+      \vspace*{\fill}
+      {\Large\scshape \partname~\thepart\par}
+      \vspace{2em}
+      {\Huge\bfseries #3\par}
+      \vspace*{\fill}
+    \end{center}
+    \clearpage
+  }%
+}
+\makeatother

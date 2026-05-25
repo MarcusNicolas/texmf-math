@@ -7,7 +7,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 \RequirePackage{mathtools}
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb, amsfonts, amsmath, amsrefs}

@@ -12,7 +12,6 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amssymb, amsfonts, amsmath, amsrefs}
 \RequirePackage{amsthm}
-\RequirePackage{thmtools}
 \RequirePackage{soul}
 \RequirePackage{appendix}
 

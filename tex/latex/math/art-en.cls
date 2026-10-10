@@ -42,10 +42,15 @@ linkcolor=blue, urlcolor=cyan]{hyperref}
 
 
 \newtheorem*{thm*}{Theorem}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{lem*}{Lemma}
+\newtheorem*{cor*}{Corollary}
 
 
 \theoremstyle{remark}
 \newtheorem{rmk}[thm]{Remark}
+
+\newtheorem*{rmk*}{Remark}
 
 \theoremstyle{definition}
 \newtheorem{dfn}[thm]{Definition}

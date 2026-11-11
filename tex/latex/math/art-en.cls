@@ -58,21 +58,21 @@ linkcolor=blue, urlcolor=cyan]{hyperref}
 \newtheorem{ex}[thm]{Example}
 
 
-\crefname{thm}{theorem}{theorems}
+\crefname{thm}{Theorem}{Theorems}
 \Crefname{thm}{Theorem}{Theorems}
-\crefname{prop}{proposition}{propositions}
+\crefname{prop}{Proposition}{Propositions}
 \Crefname{prop}{Proposition}{Propositions}
-\crefname{lem}{lemma}{lemmas}
+\crefname{lem}{Lemma}{Lemmas}
 \Crefname{lem}{Lemma}{Lemmas}
-\crefname{cor}{corollary}{corollaries}
+\crefname{cor}{Corollary}{Corollaries}
 \Crefname{cor}{Corollary}{Corollaries}
-\crefname{rmk}{remark}{remarks}
+\crefname{rmk}{Remark}{Remarks}
 \Crefname{rmk}{Remark}{Remarks}
-\crefname{dfn}{definition}{definitions}
+\crefname{dfn}{Definition}{Definitions}
 \Crefname{dfn}{Definition}{Definitions}
-\crefname{cstr}{construction}{constructions}
+\crefname{cstr}{Construction}{Constructions}
 \Crefname{cstr}{Construction}{constructions}
-\crefname{ex}{example}{examples}
+\crefname{ex}{Example}{Examples}
 \Crefname{ex}{Example}{Examples}
 
 
